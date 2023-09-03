@@ -1,0 +1,21 @@
+driver.manage().window().maximize();
+
+
+
+
+@Test
+    void testAlert() throws InterruptedException{
+        WikipediaPage wikipage = new WikipediaPage(driver, "https://www.w3schools.com/js/tryit.asp?filename=tryjs_prompt");
+        // wikipage.locatorAlertMetodo();
+        wikipage.alert4();
+    }
+public void alert4() {
+         driver.switchTo().frame("iframeResult");
+        explicitWait(15, 3, locatorAlert);
+        // Thread.sleep(8000);
+         click(locatorAlert);
+        Alert alert = driver.switchTo().alert();
+        alert.sendKeys("Holaaaa");
+        alert.accept();
+
+    }

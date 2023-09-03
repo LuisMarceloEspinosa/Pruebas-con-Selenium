@@ -1,0 +1,6 @@
+https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/WebDriver.html
+https://www.selenium.dev/documentation/webdriver/interactions/windows/#minimize-window
+
+https://chrome.google.com/webstore/detail/chropath/ljngjbnaijcbncmcnjfhigebomdlkcjo?hl=es
+
+https://the-internet.herokuapp.com/

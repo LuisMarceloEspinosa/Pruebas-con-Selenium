@@ -1,0 +1,50 @@
+ @Test public void testWikipediaTitle() { 
+          WebDriverManager.chromedriver().setup();
+        WebDriver driver = new ChromeDriver(); 
+        driver.get("https://www.wikipedia.org");
+        String element = driver.getTitle();
+        assertEquals("Wikipedia", element);
+        driver.quit();
+}
+    @Test public void buttonGoogle(){
+        WebDriverManager.chromedriver().setup();
+        WebDriver driver = new ChromeDriver(); 
+        driver.get("https://www.google.com");
+        WebElement element = driver.findElement(By.cssSelector("input.gNO89b"));
+        String google = element.getAttribute("value");
+        assertEquals(google, "Buscar con Google");
+    }
+      @Test public void twitter(){
+        WebDriverManager.chromedriver().setup();
+        WebDriver driver = new ChromeDriver(); 
+        driver.get("https://www.twitter.com");
+         WebElement element = driver.findElement(By.cssSelector("a[data-testid=loginButton]"));
+         String linkEsperado = element.getAttribute("href");
+         assertEquals(linkEsperado, "https://twitter.com/login");
+    }
+    
+     @Test public void youtube(){
+        WebDriverManager.chromedriver().setup();
+        WebDriver driver = new ChromeDriver(); 
+        driver.get("https://www.youtube.com/");
+        String element = driver.getTitle();
+        assertNotEquals(element, "");
+    }
+     @Test public void testWiki2() { 
+          WebDriverManager.chromedriver().setup();
+        WebDriver driver = new ChromeDriver(); 
+        driver.get("https://en.wikipedia.org/wiki/Main_Page");
+        WebElement findE = driver.findElement(By.cssSelector("img.mw-logo-tagline"));
+        String findEsperado = findE.getAttribute("alt");
+        assertNotEquals(findEsperado, "Enciclopedia Libre");
+        
+     }
+      @Test public void twitterNotEquals() { 
+          WebDriverManager.chromedriver().setup();
+        WebDriver driver = new ChromeDriver(); 
+        driver.get("https://www.twitter.com");
+         WebElement element = driver.findElement(By.cssSelector("a[data-testid=loginButton]"));
+         String textEsperado = element.getText();
+         System.out.println(textEsperado);
+        assertNotEquals(textEsperado, "Log In");
+     }

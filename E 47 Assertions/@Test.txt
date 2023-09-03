@@ -1,0 +1,30 @@
+  @Test
+        void testGitHubJob(){
+            WebDriverManager.chromedriver().setup();
+            WebDriver driver = new ChromeDriver();
+            driver.get("https://github.com/about/careers");
+            WebElement button = driver.findElement(By.cssSelector("#engineering > div > h3 > button"));
+            button.click();
+            List<WebElement> elements = driver.findElements(By.cssSelector("#engineering > ul > li"));
+            assertFalse(elements.isEmpty());
+            int numElements = elements.size();
+            System.out.println(numElements);
+    
+            String targetText = "software engineer";
+            int countStarWars = 0;
+        
+            for (WebElement element : elements) {
+                String text = element.getText();
+                System.out.println("Texto del elemento: " + text);
+                
+        
+                if (text.toLowerCase().startsWith(targetText) || text.toLowerCase().contains(targetText)) {
+                    countStarWars++;
+                }
+            } 
+            assertTrue(countStarWars > 0);
+        
+            System.out.println("Número de elementos que comienzan o contienen 'star wars': " + countStarWars);
+        
+            
+        }
